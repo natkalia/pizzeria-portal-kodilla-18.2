@@ -29,10 +29,9 @@ const App = () => {
 
           <Route exact path={`${process.env.PUBLIC_URL}/tables/events/new`} component={EventsNew} />
           <Route exact path={`${process.env.PUBLIC_URL}/tables/events/:id`} component={EventsEdit} />
-
           
-          <Route exact path={`${process.env.PUBLIC_URL}/waiter/new`} component={OrderNew} />
-          <Route exact path={`${process.env.PUBLIC_URL}/waiter/:id`} component={OrderEdit} />
+          <Route exact path={`${process.env.PUBLIC_URL}/waiter/order/new`} component={OrderNew} />
+          <Route exact path={`${process.env.PUBLIC_URL}/waiter/order/:id`} component={OrderEdit} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
