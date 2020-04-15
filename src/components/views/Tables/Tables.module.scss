@@ -1,5 +1,31 @@
 @import '../../../styles/settings.scss';
 
-// .component {
-//   padding: $base-size;
-// }
+.paper {
+  padding: $base-size * 5;
+  margin: $base-size * 2;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: ($base-size * 2) auto;
+}
+  
+.btn {
+  margin-right: $base-size;
+}
+
+.textField {
+  width: $base-size * 20;
+  margin-right: $base-size * 5;
+}
+
+.icon {
+  margin: $base-size;
+  font-size: 32px;
+}
+  
+.heading {
+  text-align: center;
+}

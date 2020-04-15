@@ -1,5 +1,23 @@
 @import '../../../styles/settings.scss';
 
-// .component {
-//   padding: $base-size;
-// }
+.paper {
+  padding: $base-size * 5;
+  margin: $base-size * 2;
+}
+
+.icon {
+  margin: $base-size;
+}
+
+.table {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.btn {
+  margin-left: $base-size;
+}
+
+.heading {
+  text-align: center;
+}

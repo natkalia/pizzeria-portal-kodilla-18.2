@@ -1,5 +1,36 @@
 @import '../../../styles/settings.scss';
 
-// .component {
-//   padding: $base-size;
-// }
+.paper {
+    padding: $base-size * 5;
+    margin: $base-size * 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  
+  .form {
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  
+  .btn {
+    text-align: center;
+    width: 120px;
+    margin: $base-size*2 auto;
+  }
+  
+  .textField {
+    margin: $base-size * 2 0;
+    width: 200px;
+    flex: 33%;
+  }
+  
+  .heading {
+    text-align: center;
+  }
