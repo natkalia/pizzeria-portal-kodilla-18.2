@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './OrderEdit.module.scss';
 import { Link, useParams } from 'react-router-dom';
 import { Paper, Container, Typography, Table, 
-  TableBody, TableCell, TableHead, TableRow,
+  TableBody, TableCell, TableHead, TableRow, TableContainer,
   Select, MenuItem, Button, Toolbar, TextField } from '@material-ui/core';
 
 const demoContent = [
@@ -72,138 +72,144 @@ const OrderEdit= () => {
         <Typography className={styles.subheading} variant='h5'>
           Full menu:
         </Typography>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Product Id</TableCell>
-              <TableCell>Product Name</TableCell>
-              <TableCell>Product Price</TableCell>
-              <TableCell>Product Options</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {demoContent.map(row => (
-              <TableRow key={row.id}>
-                <TableCell component='th' scope='row'>
-                  {row.id}
-                </TableCell>
-                <TableCell>
-                  <strong>{row.name}</strong>
-                </TableCell>
-                <TableCell>${row.price}</TableCell>
-                <TableCell>
-                  <div>
-                    {row.options.map(option => (
-                      <p key={option}>{option}</p>
-                    ))}
-                  </div>
-                </TableCell>
+        <TableContainer className={styles.tableContainer}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Product Id</TableCell>
+                <TableCell>Product Name</TableCell>
+                <TableCell>Product Price</TableCell>
+                <TableCell>Product Options</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHead>
+            <TableBody>
+              {demoContent.map(row => (
+                <TableRow key={row.id}>
+                  <TableCell component='th' scope='row'>
+                    {row.id}
+                  </TableCell>
+                  <TableCell>
+                    <strong>{row.name}</strong>
+                  </TableCell>
+                  <TableCell>${row.price}</TableCell>
+                  <TableCell>
+                    <div>
+                      {row.options.map(option => (
+                        <p key={option}>{option}</p>
+                      ))}
+                    </div>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Paper>
       <Paper className={styles.paper} elevation={24}>
         <Typography className={styles.subheading} variant='h5'>
           Choose products for order:
         </Typography>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Product Id</TableCell>
-              <TableCell>Product Name</TableCell>
-              <TableCell>Product Price</TableCell>
-              <TableCell>Product Options</TableCell>
-              <TableCell>Amount</TableCell>
-              <TableCell>Actions</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {demoContent.map(row => (
-              <TableRow key={row.id}>
-                <TableCell component='th' scope='row'>
-                  {row.id}
-                </TableCell>
-                <TableCell><strong>{row.name}</strong></TableCell>
-                <TableCell>${row.price}</TableCell>
-                <TableCell>
-                  <Select 
-                    defaultValue='medium'
-                    className={styles.select}>
-                    {row.options.map(option => (
-                      <MenuItem key={option} value={option}>
-                        {option}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </TableCell>
-                <TableCell>
-                  <TextField
-                    className={styles.textField}
-                    id='table'
-                    type='number'
-                    defaultValue='1'
-                    inputProps={{ min: '1', max: '4', step: '1', style: { textAlign: 'center' }}}/>
-                </TableCell>
-                <TableCell>
-                  <Button
-                    className={styles.btn} 
-                    variant='contained' 
-                    color='primary'>
-                    Add
-                  </Button>
-                </TableCell>
+        <TableContainer className={styles.tableContainer}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Product Id</TableCell>
+                <TableCell>Product Name</TableCell>
+                <TableCell>Product Price</TableCell>
+                <TableCell>Product Options</TableCell>
+                <TableCell>Amount</TableCell>
+                <TableCell>Actions</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHead>
+            <TableBody>
+              {demoContent.map(row => (
+                <TableRow key={row.id}>
+                  <TableCell component='th' scope='row'>
+                    {row.id}
+                  </TableCell>
+                  <TableCell><strong>{row.name}</strong></TableCell>
+                  <TableCell>${row.price}</TableCell>
+                  <TableCell>
+                    <Select 
+                      defaultValue='medium'
+                      className={styles.select}>
+                      {row.options.map(option => (
+                        <MenuItem key={option} value={option}>
+                          {option}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </TableCell>
+                  <TableCell>
+                    <TextField
+                      className={styles.textField}
+                      id='table'
+                      type='number'
+                      defaultValue='1'
+                      inputProps={{ min: '1', max: '4', step: '1', style: { textAlign: 'center' }}}/>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      className={styles.btn} 
+                      variant='contained' 
+                      color='primary'>
+                      Add
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Paper>
       <Paper className={styles.paper} elevation={24}>
         <Typography className={styles.subheading} variant='h5'>
           <p>Order No.: <strong>{id}</strong></p>
           <p>Table No.: <strong>1</strong></p>
         </Typography>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Product Id</TableCell>
-              <TableCell>Product Name</TableCell>
-              <TableCell>Product Price</TableCell>
-              <TableCell>Product Options</TableCell>
-              <TableCell>Amount</TableCell>
-              <TableCell>Actions</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {demoContentOrder.map(row => (
-              <TableRow key={row.id}>
-                <TableCell component='th' scope='row'>
-                  {row.id}
-                </TableCell>
-                <TableCell>
-                  <strong>{row.name}</strong>
-                </TableCell>
-                <TableCell>${row.price}</TableCell>
-                <TableCell>
-                  <div>
-                    {row.options.map(option => (
-                      <p key={option}>{option}</p>
-                    ))}
-                  </div>
-                </TableCell>
-                <TableCell>1</TableCell>
-                <TableCell>
-                  <Button 
-                    className={styles.btn}
-                    variant='contained' 
-                    color='primary'>
-                    Remove
-                  </Button>
-                </TableCell>
+        <TableContainer className={styles.tableContainer}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Product Id</TableCell>
+                <TableCell>Product Name</TableCell>
+                <TableCell>Product Price</TableCell>
+                <TableCell>Product Options</TableCell>
+                <TableCell>Amount</TableCell>
+                <TableCell>Actions</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHead>
+            <TableBody>
+              {demoContentOrder.map(row => (
+                <TableRow key={row.id}>
+                  <TableCell component='th' scope='row'>
+                    {row.id}
+                  </TableCell>
+                  <TableCell>
+                    <strong>{row.name}</strong>
+                  </TableCell>
+                  <TableCell>${row.price}</TableCell>
+                  <TableCell>
+                    <div>
+                      {row.options.map(option => (
+                        <p key={option}>{option}</p>
+                      ))}
+                    </div>
+                  </TableCell>
+                  <TableCell>1</TableCell>
+                  <TableCell>
+                    <Button 
+                      className={styles.btn}
+                      variant='contained' 
+                      color='primary'>
+                      Remove
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
         <Typography className={styles.subheading} variant='h5'>
           Total: <span><strong>$19</strong></span>
         </Typography>
