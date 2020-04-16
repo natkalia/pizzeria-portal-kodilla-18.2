@@ -14,3 +14,4 @@
 - [ ] upgrade dashboard - not intuitive solution now, and add more statistics calculated dynamically
 - [ ] change implementation for status change to new order (ordered) in Waiter and TabelsRedux to
 make it work once form is submitted
+- [ ] refactor/shorten repeating code in Tables (row.tableX)

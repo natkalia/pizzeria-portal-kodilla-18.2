@@ -3,7 +3,7 @@ import styles from './OrderEdit.module.scss';
 import { Link, useParams } from 'react-router-dom';
 import { Paper, Container, Typography, Table, 
   TableBody, TableCell, TableHead, TableRow,
-  Select, MenuItem, Button, Toolbar, TextField } from '@material-ui/core/Paper';
+  Select, MenuItem, Button, Toolbar, TextField } from '@material-ui/core';
 
 const demoContent = [
   {
