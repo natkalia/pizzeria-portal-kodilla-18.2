@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Paper, Toolbar, TableRow,
+import { Container, Paper, Toolbar, TableRow, TableContainer,
   TableBody, TableHead, TableCell, Table, Typography } from '@material-ui/core';
 import styles from './Homepage.module.scss';
 import {getCurrentDate} from '../../../utils/getCurrentDate.js';
@@ -28,6 +28,7 @@ const orders = [
 const Homepage = () => {
   return (
     <Container maxWidth='lg'>
+
       <Toolbar />
       <Typography className={styles.heading} variant='h3'>
         Pizzeria Portal Dashboard
@@ -36,85 +37,91 @@ const Homepage = () => {
         <Typography className={styles.subheading} variant='h5'>
           Order statistics for today {getCurrentDate()}
         </Typography>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Order No.</TableCell>
-              <TableCell>Total order amount</TableCell>
-              <TableCell>Table / remote order</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {orders.map(row => (
-              <TableRow key={row.id}>
-                <TableCell>{row.id}</TableCell>
-                <TableCell>${row.amount}</TableCell>
-                <TableCell>{row.location}</TableCell>
+        <TableContainer className={styles.tableContainer}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Order No.</TableCell>
+                <TableCell>Total order amount</TableCell>
+                <TableCell>Table / remote order</TableCell>
               </TableRow>
-            ))}
-            <TableRow>
-              <TableCell><strong>TOTAL REMOTE ORDERS:</strong> 2 / $100</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell><strong>TOTAL TABLE ORDERS: </strong> 5 / $200</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+            </TableHead>
+            <TableBody>
+              {orders.map(row => (
+                <TableRow key={row.id}>
+                  <TableCell>{row.id}</TableCell>
+                  <TableCell>${row.amount}</TableCell>
+                  <TableCell>{row.location}</TableCell>
+                </TableRow>
+              ))}
+              <TableRow>
+                <TableCell><strong>TOTAL REMOTE ORDERS:</strong> 2 / $100</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell><strong>TOTAL TABLE ORDERS: </strong> 5 / $200</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Paper>
       <Paper className={styles.paper} elevation={24}>
         <Typography className={styles.subheading} variant='h5'>
             Bookings for today {getCurrentDate()}
         </Typography>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Boooking No.</TableCell>
-              <TableCell>Hour</TableCell>
-              <TableCell>Duration</TableCell>
-              <TableCell>Table</TableCell>
-              <TableCell>People</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {bookings.map(row => (
-              <TableRow key={row.id}>
-                <TableCell>{row.id}</TableCell>
-                <TableCell>{row.hour}</TableCell>
-                <TableCell>{row.duration}</TableCell>
-                <TableCell>{row.table}</TableCell>
-                <TableCell>{row.people}</TableCell>
+        <TableContainer className={styles.tableContainer}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Boooking No.</TableCell>
+                <TableCell>Hour</TableCell>
+                <TableCell>Duration</TableCell>
+                <TableCell>Table</TableCell>
+                <TableCell>People</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHead>
+            <TableBody>
+              {bookings.map(row => (
+                <TableRow key={row.id}>
+                  <TableCell>{row.id}</TableCell>
+                  <TableCell>{row.hour}</TableCell>
+                  <TableCell>{row.duration}</TableCell>
+                  <TableCell>{row.table}</TableCell>
+                  <TableCell>{row.people}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Paper>
 
       <Paper className={styles.paper} elevation={24}>
         <Typography className={styles.subheading} variant='h5'>
             Events for today {getCurrentDate()}
         </Typography>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Event No.</TableCell>
-              <TableCell>Hour</TableCell>
-              <TableCell>Duration</TableCell>
-              <TableCell>Table</TableCell>
-              <TableCell>People</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {events.map(row => (
-              <TableRow key={row.id}>
-                <TableCell>{row.id}</TableCell>
-                <TableCell>{row.hour}</TableCell>
-                <TableCell>{row.duration}</TableCell>
-                <TableCell>{row.table}</TableCell>
-                <TableCell>{row.people}</TableCell>
+        <TableContainer className={styles.tableContainer}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Event No.</TableCell>
+                <TableCell>Hour</TableCell>
+                <TableCell>Duration</TableCell>
+                <TableCell>Table</TableCell>
+                <TableCell>People</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHead>
+            <TableBody>
+              {events.map(row => (
+                <TableRow key={row.id}>
+                  <TableCell>{row.id}</TableCell>
+                  <TableCell>{row.hour}</TableCell>
+                  <TableCell>{row.duration}</TableCell>
+                  <TableCell>{row.table}</TableCell>
+                  <TableCell>{row.people}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Paper>
 
     </Container>

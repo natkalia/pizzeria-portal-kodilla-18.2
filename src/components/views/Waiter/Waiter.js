@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Waiter.module.scss';
 import {Link} from 'react-router-dom';
-import { Table, TableBody, TableCell, TableHead,
+import { Table, TableBody, TableCell, TableHead, TableContainer,
   TableRow, Paper, Button, Container, Icon, Typography, Toolbar } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
@@ -139,42 +139,44 @@ class Waiter extends React.Component {
               Add New Order
               <Icon className={styles.icon} color='secondary'>add_circle</Icon>
             </Button>
-            <Table className={styles.table}> 
-              <TableHead>
-                <TableRow>
-                  <TableCell>Table No.</TableCell>
-                  <TableCell>Order No.</TableCell>
-                  <TableCell>Status</TableCell>
-                  <TableCell>Action</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {tables.map(row => (
-                  <TableRow key={row.id}>
-                    <TableCell component='th' scope='row'>
-                      {row.id}
-                    </TableCell>
-                    <TableCell>
-                      {row.order && (
-                        <Button 
-                          color='secondary' 
-                          component={Link} 
-                          to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
-                          {row.order}
-                          <Icon className={styles.icon} color='secondary'>create</Icon>
-                        </Button>
-                      )}
-                    </TableCell>
-                    <TableCell>
-                      {row.status}
-                    </TableCell>
-                    <TableCell>
-                      {this.renderActions(row.id, row.status, row.order)}
-                    </TableCell>
+            <TableContainer className={styles.tableContainer}>
+              <Table className={styles.table}> 
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Table No.</TableCell>
+                    <TableCell>Order No.</TableCell>
+                    <TableCell>Status</TableCell>
+                    <TableCell>Action</TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+                </TableHead>
+                <TableBody>
+                  {tables.map(row => (
+                    <TableRow key={row.id}>
+                      <TableCell component='th' scope='row'>
+                        {row.id}
+                      </TableCell>
+                      <TableCell>
+                        {row.order && (
+                          <Button 
+                            color='secondary' 
+                            component={Link} 
+                            to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
+                            {row.order}
+                            <Icon className={styles.icon} color='secondary'>create</Icon>
+                          </Button>
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {row.status}
+                      </TableCell>
+                      <TableCell>
+                        {this.renderActions(row.id, row.status, row.order)}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
           </Paper>
         </Container> 
       );

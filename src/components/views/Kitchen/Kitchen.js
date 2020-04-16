@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Kitchen.module.scss';
-import { Paper, Container, Table, TableBody, TableCell, 
+import { Paper, Container, Table, TableBody, TableCell, TableContainer,
   TableHead, TableRow, Typography, Checkbox, Toolbar } from '@material-ui/core';
 import CircleCheckedFilled from '@material-ui/icons/CheckCircle';
 import CircleUnchecked from '@material-ui/icons/RadioButtonUnchecked';
@@ -33,36 +33,38 @@ const Kitchen = () => {
         Kitchen
       </Typography>
       <Paper className={styles.paper} elevation={24}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Start time</TableCell>
-              <TableCell>Table No.</TableCell>
-              <TableCell>Order No.</TableCell>
-              <TableCell>Order details</TableCell>
-              <TableCell>Status</TableCell>
-              <TableCell>Check completed</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {sortArrByTime(demoContent).map(row => (
-              <TableRow key={row.id}>
-                <TableCell>{getTime(row.timestamp)}</TableCell>
-                <TableCell>{row.table}</TableCell>
-                <TableCell>{row.id}</TableCell>
-                <TableCell>{row.order.join(', ')}</TableCell>
-                <TableCell>{row.status}</TableCell>
-                <TableCell>
-                  <Checkbox 
-                    defaultChecked={(row.status === 'completed') ? true : false } 
-                    icon={<CircleUnchecked className={styles.icon}/>}
-                    checkedIcon={<CircleCheckedFilled className={styles.icon} />}
-                  />
-                </TableCell>
+        <TableContainer className={styles.tableContainer}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Start time</TableCell>
+                <TableCell>Table No.</TableCell>
+                <TableCell>Order No.</TableCell>
+                <TableCell>Order details</TableCell>
+                <TableCell>Status</TableCell>
+                <TableCell>Check completed</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHead>
+            <TableBody>
+              {sortArrByTime(demoContent).map(row => (
+                <TableRow key={row.id}>
+                  <TableCell>{getTime(row.timestamp)}</TableCell>
+                  <TableCell>{row.table}</TableCell>
+                  <TableCell>{row.id}</TableCell>
+                  <TableCell>{row.order.join(', ')}</TableCell>
+                  <TableCell>{row.status}</TableCell>
+                  <TableCell>
+                    <Checkbox 
+                      defaultChecked={(row.status === 'completed') ? true : false } 
+                      icon={<CircleUnchecked className={styles.icon}/>}
+                      checkedIcon={<CircleCheckedFilled className={styles.icon} />}
+                    />
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Paper>
     </Container>
   );

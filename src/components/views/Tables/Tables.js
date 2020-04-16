@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Tables.module.scss';
 import { Link } from 'react-router-dom';
 import { Button, Paper, Toolbar, Container,
-  Typography, TextField, Table, TableBody, 
+  Typography, TextField, Table, TableBody, TableContainer,
   TableCell, TableHead, TableRow, Icon } from '@material-ui/core';
 import {getCurrentDate} from '../../../utils/getCurrentDate.js';
 
@@ -90,123 +90,123 @@ const Tables = () => {
             </Icon>
           </Button>
         </form>
-
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Time</TableCell>
-              <TableCell>Table 1</TableCell>
-              <TableCell>Table 2</TableCell>
-              <TableCell>Table 3</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {demoContent.map(row => (
-              <TableRow key={row.id} >
-                <TableCell scope='row' component='th'>
-                  {row.time}
-                </TableCell>
-                <TableCell>
-                  {(row.table1 === null) ? 
-                    (
-                      <>
-                        <Button 
-                          className={styles.btn}
-                          color='primary' 
-                          variant='outlined'
-                          component={Link} 
-                          to={`${process.env.PUBLIC_URL}/tables/booking/new`}>
-                          New Booking
-                        </Button>
-                        <Button 
-                          className={styles.btn}
-                          color='primary' 
-                          variant='outlined'
-                          component={Link} 
-                          to={`${process.env.PUBLIC_URL}/tables/events/new`}>
-                          New Event
-                        </Button>
-                      </>
-                    ) : 
-                    (
-                      <Button 
-                        component={Link}
-                        color='secondary' 
-                        to={`${process.env.PUBLIC_URL}/tables/${row.table1.substring(0, row.table1.length-4)}/${row.table1}`}>                      
-                        {row.table1}
-                        <Icon className={styles.icon} color='secondary'>create</Icon>
-                      </Button>
-                    )}
-                </TableCell>
-                <TableCell>
-                  {(row.table2 === null) ?
-                    (
-                      <>
-                        <Button 
-                          className={styles.btn}
-                          color='primary' 
-                          variant='outlined'
-                          component={Link} 
-                          to={`${process.env.PUBLIC_URL}/tables/booking/new`}>
-                          New Booking
-                        </Button>
-                        <Button 
-                          className={styles.btn}
-                          color='primary' 
-                          variant='outlined'
-                          component={Link} 
-                          to={`${process.env.PUBLIC_URL}/tables/events/new`}>
-                          New Event
-                        </Button>
-                      </>
-                    ) :  
-                    (
-                      <Button 
-                        component={Link}
-                        color='secondary' 
-                        to={`${process.env.PUBLIC_URL}/tables/${row.table2.substring(0, row.table2.length-4)}/${row.table2}`}>
-                        {row.table2}
-                        <Icon className={styles.icon} color='secondary'>create</Icon>
-                      </Button>
-                    )}
-                </TableCell>
-                <TableCell>
-                  {(row.table3 === null) ? 
-                    (
-                      <>
-                        <Button 
-                          className={styles.btn}
-                          color='primary' 
-                          variant='outlined'
-                          component={Link} 
-                          to={`${process.env.PUBLIC_URL}/tables/booking/new`}>
-                          New Booking
-                        </Button>
-                        <Button 
-                          className={styles.btn}
-                          color='primary' 
-                          variant='outlined'
-                          component={Link} 
-                          to={`${process.env.PUBLIC_URL}/tables/events/new`}>
-                          New Event
-                        </Button>
-                      </>
-                    ) :
-                    (
-                      <Button 
-                        component={Link}
-                        color='secondary' 
-                        to={`${process.env.PUBLIC_URL}/tables/${row.table3.substring(0, row.table3.length-4)}/${row.table3}`}>
-                        {row.table3}
-                        <Icon className={styles.icon} color='secondary'>create</Icon>
-                      </Button>
-                    )}
-                </TableCell>
+        <TableContainer className={styles.tableContainer}>    
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Time</TableCell>
+                <TableCell>Table 1</TableCell>
+                <TableCell>Table 2</TableCell>
+                <TableCell>Table 3</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-
+            </TableHead>
+            <TableBody>
+              {demoContent.map(row => (
+                <TableRow key={row.id} >
+                  <TableCell scope='row' component='th'>
+                    {row.time}
+                  </TableCell>
+                  <TableCell>
+                    {(row.table1 === null) ? 
+                      (
+                        <>
+                          <Button 
+                            className={styles.btn}
+                            color='primary' 
+                            variant='outlined'
+                            component={Link} 
+                            to={`${process.env.PUBLIC_URL}/tables/booking/new`}>
+                            New Booking
+                          </Button>
+                          <Button 
+                            className={styles.btn}
+                            color='primary' 
+                            variant='outlined'
+                            component={Link} 
+                            to={`${process.env.PUBLIC_URL}/tables/events/new`}>
+                            New Event
+                          </Button>
+                        </>
+                      ) : 
+                      (
+                        <Button 
+                          component={Link}
+                          color='secondary' 
+                          to={`${process.env.PUBLIC_URL}/tables/${row.table1.substring(0, row.table1.length-4)}/${row.table1}`}>                      
+                          {row.table1}
+                          <Icon className={styles.icon} color='secondary'>create</Icon>
+                        </Button>
+                      )}
+                  </TableCell>
+                  <TableCell>
+                    {(row.table2 === null) ?
+                      (
+                        <>
+                          <Button 
+                            className={styles.btn}
+                            color='primary' 
+                            variant='outlined'
+                            component={Link} 
+                            to={`${process.env.PUBLIC_URL}/tables/booking/new`}>
+                            New Booking
+                          </Button>
+                          <Button 
+                            className={styles.btn}
+                            color='primary' 
+                            variant='outlined'
+                            component={Link} 
+                            to={`${process.env.PUBLIC_URL}/tables/events/new`}>
+                            New Event
+                          </Button>
+                        </>
+                      ) :  
+                      (
+                        <Button 
+                          component={Link}
+                          color='secondary' 
+                          to={`${process.env.PUBLIC_URL}/tables/${row.table2.substring(0, row.table2.length-4)}/${row.table2}`}>
+                          {row.table2}
+                          <Icon className={styles.icon} color='secondary'>create</Icon>
+                        </Button>
+                      )}
+                  </TableCell>
+                  <TableCell>
+                    {(row.table3 === null) ? 
+                      (
+                        <>
+                          <Button 
+                            className={styles.btn}
+                            color='primary' 
+                            variant='outlined'
+                            component={Link} 
+                            to={`${process.env.PUBLIC_URL}/tables/booking/new`}>
+                            New Booking
+                          </Button>
+                          <Button 
+                            className={styles.btn}
+                            color='primary' 
+                            variant='outlined'
+                            component={Link} 
+                            to={`${process.env.PUBLIC_URL}/tables/events/new`}>
+                            New Event
+                          </Button>
+                        </>
+                      ) :
+                      (
+                        <Button 
+                          component={Link}
+                          color='secondary' 
+                          to={`${process.env.PUBLIC_URL}/tables/${row.table3.substring(0, row.table3.length-4)}/${row.table3}`}>
+                          {row.table3}
+                          <Icon className={styles.icon} color='secondary'>create</Icon>
+                        </Button>
+                      )}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Paper>
     </Container>
   );
