@@ -7,3 +7,10 @@
 - http://localhost:3131/api - URL for project API
 - http://localhost:3131/api/db - to see database in API
 - http://localhost:3131/panel - administration panel after running 'yarn start' (no live refreshing, view status as of running 'yarn start')
+
+## TODO's / known bugs
+- [ ] add cancel buttons to new order, new booking, new event
+- [ ] add redux and API communication to all other views than Waiter 
+- [ ] upgrade dashboard - not intuitive solution now, and add more statistics calculated dynamically
+- [ ] change implementation for status change to new order (ordered) in Waiter and TabelsRedux to
+make it work once form is submitted
