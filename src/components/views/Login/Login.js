@@ -1,12 +1,8 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import Container from '@material-ui/core/Container';
-import Button from '@material-ui/core/Button';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './Login.module.scss';
-import Typography from '@material-ui/core/Typography';
-import Toolbar from '@material-ui/core/Toolbar';
-import Paper from '@material-ui/core/Paper';
+import { Typography, Toolbar, Paper, 
+  TextField, Container, Button } from '@material-ui/core';
 
 const Login = () => {
   return (

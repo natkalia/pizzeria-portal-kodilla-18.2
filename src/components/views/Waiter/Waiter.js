@@ -1,17 +1,8 @@
 import React from 'react';
 import styles from './Waiter.module.scss';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
-import Container from '@material-ui/core/Container';
 import {Link} from 'react-router-dom';
-import Icon from '@material-ui/core/Icon';
-import Typography from '@material-ui/core/Typography';
-import Toolbar from '@material-ui/core/Toolbar';
+import { Table, TableBody, TableCell, TableHead,
+  TableRow, Paper, Button, Container, Icon, Typography, Toolbar } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
 class Waiter extends React.Component {

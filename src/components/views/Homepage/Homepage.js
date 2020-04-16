@@ -1,15 +1,8 @@
 import React from 'react';
-import Container from '@material-ui/core/Container';
-import Paper from '@material-ui/core/Paper';
-import Toolbar from '@material-ui/core/Toolbar';
-import TableRow from '@material-ui/core/TableRow';
-import TableBody from '@material-ui/core/TableBody';
-import TableHead from '@material-ui/core/TableHead';
-import TableCell from '@material-ui/core/TableCell';
-import Table from '@material-ui/core/Table';
+import { Container, Paper, Toolbar, TableRow,
+  TableBody, TableHead, TableCell, Table, Typography } from '@material-ui/core';
 import styles from './Homepage.module.scss';
 import {getCurrentDate} from '../../../utils/getCurrentDate.js';
-import Typography from '@material-ui/core/Typography';
 
 const bookings = [
   {id: 'booking-221', hour: '12:00', duration: 2, table: 1, people: 2},

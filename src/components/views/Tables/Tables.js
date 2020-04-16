@@ -1,18 +1,9 @@
 import React from 'react';
 import styles from './Tables.module.scss';
-import {Link} from 'react-router-dom';
-import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
-import Toolbar from '@material-ui/core/Toolbar';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Icon from '@material-ui/core/Icon';
+import { Link } from 'react-router-dom';
+import { Button, Paper, Toolbar, Container,
+  Typography, TextField, Table, TableBody, 
+  TableCell, TableHead, TableRow, Icon } from '@material-ui/core';
 import {getCurrentDate} from '../../../utils/getCurrentDate.js';
 
 const demoContent = [

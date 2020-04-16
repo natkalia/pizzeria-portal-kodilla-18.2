@@ -1,12 +1,8 @@
 import React from 'react';
 import styles from './EventsNew.module.scss';
-import {Link} from 'react-router-dom';
-import Paper from '@material-ui/core/Paper';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Container from '@material-ui/core/Container';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
+import { Paper, TextField, Button, Container, 
+  Toolbar, Typography } from '@material-ui/core';
 import {getCurrentDate} from '../../../utils/getCurrentDate.js';
 
 const getNewId = () => {

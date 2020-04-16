@@ -1,9 +1,7 @@
 import React from 'react';
 import PageNav from '../PageNav/PageNav';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Container from '@material-ui/core/Container';
+import {AppBar, Toolbar, Container} from '@material-ui/core';
 
 const MainLayout = ({children}) => {
   return(

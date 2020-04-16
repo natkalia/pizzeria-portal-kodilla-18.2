@@ -1,15 +1,7 @@
 import React from 'react';
 import styles from './Kitchen.module.scss';
-import Paper from '@material-ui/core/Paper';
-import Container from '@material-ui/core/Container';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Typography from '@material-ui/core/Typography';
-import Checkbox from '@material-ui/core/Checkbox';
-import Toolbar from '@material-ui/core/Toolbar';
+import { Paper, Container, Table, TableBody, TableCell, 
+  TableHead, TableRow, Typography, Checkbox, Toolbar } from '@material-ui/core';
 import CircleCheckedFilled from '@material-ui/icons/CheckCircle';
 import CircleUnchecked from '@material-ui/icons/RadioButtonUnchecked';
 
