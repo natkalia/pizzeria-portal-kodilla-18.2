@@ -15,3 +15,4 @@
 - [ ] change implementation for status change to new order (ordered) in Waiter and TabelsRedux to
 make it work once form is submitted
 - [ ] refactor/shorten repeating code in Tables (row.tableX)
+- [ ] note `const axiosURL = `${api.url}/api/${api.tables}` in tablesRedux.js: I added `api` and this will be probably necessary also for other cases in the future, think if it is ok orif I could refactor this differently for all cases at once
